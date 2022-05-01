@@ -1,4 +1,5 @@
 #include "pokedexManager.h"
+#include <stdbool.h>
 
 int main () {
 
@@ -6,7 +7,7 @@ int main () {
 	criaLista(pokedex);
 	carregaPokedex(pokedex);
 
-	while(1) {
+	while(true) {
 		switch(menu()) {
 			case 1:
 				system("clear||cls");
