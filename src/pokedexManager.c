@@ -47,6 +47,8 @@ int pegaDadosPokemon (Pokedex pokedex, struct pokemon *ptPokemon, int novoPkm) {
 	struct pokemon pokemon;
 	char nome[30], tipo1[30], tipo2[30];
 
+	imprimeTipos();
+	
 	printf("Entre com o nome do pokemon\n-> ");
 	scanf("%s", nome);
 	printf("Entre com o Tipo-1 do pokemon\n-> ");
@@ -97,8 +99,6 @@ int pegaDadosPokemon (Pokedex pokedex, struct pokemon *ptPokemon, int novoPkm) {
 int insere(Pokedex pokedex) {
 
 	struct pokemon pokemon;
-
-	imprimeTipos();
 
 	pegaDadosPokemon(pokedex ,&pokemon, 1);
 
