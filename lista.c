@@ -67,7 +67,7 @@ char* convEnumTipo (enum tipo tipoPokemon) {
 
 char* conLendarioStr (int val) {
 	if (val == 0) return "False";
-	else return "TRUE";
+	else return "True";
 }
 
 
@@ -217,7 +217,7 @@ int imprimePorTipo (Lista lstPokemon) {
 		printf(" * Defesa ESP: %-19d*    * Defesa ESP: %-19d*\n", aux->dados.defesa, proxEl->dados.defesa_esp);
 		printf(" * Velocidade: %-19d*    * Velocidade: %-19d*\n", aux->dados.velocidade, proxEl->dados.velocidade);
 		printf(" * Geração: %-22d*    * Geração: %-22d*\n", aux->dados.geracao, proxEl->dados.geracao);
-		printf(" * Lendário: %-21s*    * Lendário: %-21d*\n", conLendarioStr(aux->dados.lendario), conLendarioStr(proxEl->dados.lendario));
+		printf(" * Lendário: %-21s*    * Lendário: %-21s*\n", conLendarioStr(aux->dados.lendario), conLendarioStr(proxEl->dados.lendario));
 		printf(" **********************************    **********************************\n\n");
 
 		aux = proxEl->prox;
