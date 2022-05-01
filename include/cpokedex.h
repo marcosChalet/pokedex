@@ -50,26 +50,21 @@ typedef struct lista* Lista;
 typedef struct lista** Pokedex;
 typedef struct elemento Elemento;
 
-enum tipo pegaTipo (char *);
-int lendarioConv (char *);
-void criaLista (Pokedex);
-void liberaPokedex (Pokedex);
-int  listaVazia(Lista);
-int inserePokemon (Lista, struct pokemon);
-int imprimePorTipo (Lista);
-int buscaPokemon (Pokedex, int, struct pokemon *);
-
-char* convEnumTipo (enum tipo);
+enum  tipo pegaTipo  (char *);
+char* convEnumTipo 	 (enum tipo);
 char* conLendarioStr (int val);
-
-int qtd_por_tipo(Lista);
-int tamanho (Pokedex);
-
-int atualizaPokemon (Pokedex, int, struct pokemon);
-
-int removePokemon (Pokedex, int);
-
-void imprimePokemon(struct pokemon *);
-
+int   lendarioConv 	 (char *);
+void criaLista    	 (Pokedex);
+int  listaVazia   	 (Lista);
+int  qtd_por_tipo 	 (Lista);
+int  tamanho      	 (Pokedex);
+void liberaPokedex 	 (Pokedex);
+int  inserePokemon 	 (Lista, struct pokemon);
+int  buscaPokemon  	 (Pokedex, int, struct pokemon *);
+int  atualizaPokemon (Pokedex, int, struct pokemon);
+int  removePokemon	 (Pokedex, int);
+void imprimePokemon  (struct pokemon *);
+int  imprimePorTipo	 (Lista);
+int  pegaId 		 (Pokedex);
 
 #endif

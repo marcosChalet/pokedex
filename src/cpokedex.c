@@ -7,6 +7,7 @@ struct elemento {
 
 struct lista {
 	int qtd;
+	int maiorId;
 	struct elemento *inicio;
 	struct elemento *final;
 };
@@ -60,7 +61,7 @@ char* convEnumTipo (enum tipo tipoPokemon) {
 		case DRAGON: 	return "Dragon";
 		case DARK: 		return "Dark";
 		case FAIRY: 	return "Fairy";
-		case UNDEFINED: return " ";
+		case UNDEFINED: return "  ";
 	}
 }
 
@@ -84,6 +85,7 @@ void criaLista (Pokedex lstPokemon) {
 			lstPokemon[i]->inicio = NULL;
 			lstPokemon[i]->final  = NULL;
 			lstPokemon[i]->qtd = 0;
+			lstPokemon[i]->maiorId = 1;
 		}
 	}
 }
@@ -126,11 +128,22 @@ int tamanho (Pokedex pokedex) {
 	return tamanho;
 }
 
+int pegaId (Pokedex pokedex) {
+	int maior = pokedex[0]->maiorId;
+	for (int i = 0; i < QTD_TIPOS; i++)
+		if (maior < pokedex[i]->maiorId)
+			maior = pokedex[i]->maiorId;
+
+	return maior+1;
+}
+
 
 int inserePokemon (Lista lstPokemon, struct pokemon novosDados) {
 
-	if(listaVazia(lstPokemon) == -1)
+	if(listaVazia(lstPokemon) == -1) {
+		printf("A lista de pokemons está vazia ou não foi criada!\n");
 		return 0;
+	}
 
 	Elemento *novo = (Elemento*)malloc(sizeof(Elemento));
 	if (novo == NULL) return 0;
@@ -142,6 +155,8 @@ int inserePokemon (Lista lstPokemon, struct pokemon novosDados) {
 		lstPokemon->inicio = novo;
 		lstPokemon->final  = novo;
 		lstPokemon->qtd++;
+		if(novosDados.id > lstPokemon->maiorId)
+			lstPokemon->maiorId = novosDados.id;
 		return 1;
 	}
 
@@ -156,6 +171,8 @@ int inserePokemon (Lista lstPokemon, struct pokemon novosDados) {
 	ant->prox = novo;
 	novo->prox = aux;
 	lstPokemon->qtd++;
+	if(novosDados.id > lstPokemon->maiorId)
+			lstPokemon->maiorId = novosDados.id;
 
 	return 1;
 }
@@ -179,6 +196,7 @@ int buscaPokemon (Pokedex pokedex, int id, struct pokemon *saida) {
 	}
 
 	if (aux == NULL) {
+		printf("Pokemon não encontrado!\n");
 		return 0;
 	}
 	
@@ -229,6 +247,7 @@ int removePokemon (Pokedex pokedex, int id) {
 	}
 
 	if (aux == NULL) {
+		printf("Pokemon não encontrado!\n");
 		return 0;
 	}
 

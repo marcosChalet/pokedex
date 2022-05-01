@@ -8,6 +8,7 @@ FLAG = -O3
 all: libPokedex mydemos
 
 libPokedex: \
+	$(OBJ)/pokedexManager.o \
 	$(OBJ)/cpokedex.o \
 	$(OBJ)/banco.o
 
@@ -27,4 +28,4 @@ clear:
 	rm -rf $(BIN)/* $(OBJ)/*
 
 clean_demo:
-		rm -rf $(BIN)/*
+	rm -rf $(BIN)/*

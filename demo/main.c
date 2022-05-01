@@ -1,5 +1,4 @@
-#include "banco.h"
-#include "cpokedex.h"
+#include "pokedexManager.h"
 
 int main () {
 
@@ -7,35 +6,40 @@ int main () {
 	criaLista(pokedex);
 	carregaPokedex(pokedex);
 
-
-	for (int i = 0; i < QTD_TIPOS; i++) {
-		printf("################################# %s #################################\n\n", convEnumTipo(i));
-		imprimePorTipo(pokedex[i]);
+	while(1) {
+		switch(menu()) {
+			case 1:
+				system("clear||cls");
+				qtdTipo(pokedex);
+				break;
+			case 2:
+				system("clear||cls");
+				tamanhoPokedex(pokedex);
+				break;
+			case 3:
+				system("clear||cls");
+				insere(pokedex);
+				break;
+			case 4:
+				system("clear||cls");
+				busca(pokedex);
+				break;
+			case 5:
+				system("clear||cls");
+				atualiza(pokedex);
+				break;
+			case 6:
+				system("clear||cls");
+				removePkm(pokedex);
+				break;
+			case 7:
+				system("clear||cls");
+				imprime(pokedex);
+				break;
+			default: 
+				return 0;
+		}
 	}
-
-	for(int i = 0; i < QTD_TIPOS; i++) {
-		printf("%-9s = %d\n", convEnumTipo(i), qtd_por_tipo(pokedex[i]));
-	}
-	printf("\nTamanho: %d\n", tamanho(pokedex));
-
-
-/*
-
-	for(int i = 0; i < QTD_TIPOS; i++) {
-		printf("%-9s = %d\n", convEnumTipo(i), qtd_por_tipo(pokedex[i]));
-	}
-	printf("\nTamanho: %d\n", tamanho(pokedex));
-	removePokemon(pokedex, 123);
-	printf("Tamanho: %d\n", tamanho(pokedex));
-
-
-	atualizaPokemon(pokedex, 12);
-
-	struct pokemon saida;
-	saida.id = -1;
-	buscaPokemon (pokedex, 12, &saida);
-	imprimePokemon(&saida);
-*/
 
 	liberaPokedex(pokedex);
 
