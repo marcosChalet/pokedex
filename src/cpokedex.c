@@ -312,6 +312,7 @@ int imprimePorTipo (Lista lstPokemon) {
 
 	if (aux != NULL) {
 		printf(" **********************************\n");
+		printf(" * Score Total: %-18d*\n", aux->dados.score_total);
 		printf(" * Nome: %-25s*\n", aux->dados.nome);
 		printf(" * ID: %-27d*\n", aux->dados.id);
 		printf(" * Tipo1: %-24s*\n", convEnumTipo(aux->dados.tipo1));
