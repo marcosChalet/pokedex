@@ -1,4 +1,4 @@
-![pokedex-transparent](https://user-images.githubusercontent.com/72557256/193313552-cb059b5c-7dad-47d8-9160-42d810162326.png)
+![pokedex](https://user-images.githubusercontent.com/72557256/193317811-ab40502f-f739-4ac8-bf9d-80bce218fa27.png)
 
 <img src="http://img.shields.io/static/v1?label=STATUS&message=FINALIZADO&color=green&style=for-the-badge"/>
 
