@@ -8,6 +8,8 @@ sudo apt update
 sudo apt install make
 ```
 
+<br>
+
 ## Uso
 :cop: Instale as dependências. :cop:
 
