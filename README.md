@@ -14,7 +14,7 @@ sudo apt install make
 :cop: Instale as dependências. :cop:
 
 ```sh
-clonar e abrir o projeto
+# clonar e abrir o projeto
 make
 make run
 ```
